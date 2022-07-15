@@ -1,0 +1,11 @@
+<mat-sidenav-container style="height: 100%">
+    <mat-sidenav [mode]="(sidenavMode$ | async) ?? 'side'" #snav>
+        <app-menu></app-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-top-bar (toggleNav)="snav.toggle()"></app-top-bar>
+        <main style="padding: 1rem">
+            <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>

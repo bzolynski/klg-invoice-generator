@@ -1,0 +1,42 @@
+<div *ngIf="vm$ | async as vm">
+    <div class="company" *ngIf="vm.company">
+        <h1>{{ vm.company.name }}</h1>
+        <h2>{{ vm.company.address }}</h2>
+        <p>Phones: {{ vm.company.phones.join(", ") }}</p>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="items">
+        <div *ngIf="vm.items.length !== 0; else noItems">
+            <table class="">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th class="table-header">Item</th>
+                        <th class="table-header">Count</th>
+                        <th class="table-header">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of vm.items; let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.count }}</td>
+                        <td>{{ item.price }}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Sum: {{ getSum(vm.items) }}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<ng-template #noItems>
+    <div>No items</div>
+</ng-template>

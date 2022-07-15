@@ -1,0 +1,10 @@
+.form-group {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.del-button {
+    margin-bottom: 1.35em;
+}

@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+    <div formArrayName="items">
+        <div
+            *ngFor="
+                let group of $any(form.get('items')).controls;
+                let i = index
+            "
+        >
+            <app-invoice-form-item
+                [group]="group"
+                (handleDeleteButton)="removeItem(i)"
+            ></app-invoice-form-item>
+        </div>
+
+        <button mat-button color="primary" type="button" (click)="addItem()">
+            + Add item
+        </button>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+    </div>
+</form>
