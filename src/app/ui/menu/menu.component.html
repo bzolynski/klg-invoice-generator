@@ -1,8 +1,12 @@
-<mat-toolbar [color]="'primary'">
-</mat-toolbar>
-<mat-selection-list #shoes [multiple]="false" class="nav-list">
-    <mat-list-option [routerLink]="['']">New invoice </mat-list-option>
-    <mat-list-option [routerLink]="['preview']"
+<mat-toolbar [color]="'primary'"> </mat-toolbar>
+<mat-list class="nav-list">
+    <mat-list-item
+        [routerLinkActive]="'active'"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [routerLink]="['']"
+        >New invoice
+    </mat-list-item>
+    <mat-list-item [routerLinkActive]="'active'" [routerLink]="['preview']"
         >Invoice preview
-    </mat-list-option>
-</mat-selection-list>
+    </mat-list-item>
+</mat-list>
