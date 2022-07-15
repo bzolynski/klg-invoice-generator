@@ -1,27 +1,24 @@
-# ClientApp
+Zadanie referencyjne – Front-end Developer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
+Prosimy stworzyć aplikację “invoice generator” za pomocą Angular v.7+, która będzie się składać z 2 stron:
+1 strona:
+Formularz z listą towarów. Lista nie jest ograniczona ilością, można dodać dowolną ilość pozycji i usuwać
+dowolny wiersz w dowolnym czasie. Jedna pozycja to:
+- Name - pole wymagane, minimalna ilość znaków to 3, maksymalna ilość znaków to 30. Pole
+przyjmuje dowolne znaki.
+- Count - pole wymagane, minimum 1, maksimum 100. Pole przyjmuje tylko liczby całkowite.
+- Price - pole wymagane, minimum 1, maksimum 1000000. Pole przyjmuje tylko liczby całkowite.
+Na dole musi się znajdować zawsze aktywny przycisk “Submit”, który po kliknięciu:
+- w przypadku gdy formularz zawiera błędy – wyświetli je
+- w przypadku pustego formularza – pokaże komunikat ”Please add items”
+- w przypadku gdy formularz ma przynajmniej 1 pozycję bez błędów – przekieruje do strony 2
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Prosimy, aby druga strona składała się z dwóch części:
+- informacja o firmie z pliku company.json, proszę nie importować pliku bezpośrednio do projektu,
+a załadować go tak, aby była to odpowiedź z backendu. Telefony wyświetlić oddzielone przecinkami.
+- lista wszystkich pozycji z pierwszej strony i na dole - suma wszystkich towarów pomnożona przez ich
+ilość.
+2 strona jest zawsze widoczna w menu. Jeśli otworzymy 2 stronę bezpośrednio to zamiast listy towarów musi
+wyświetlić się komunikat ”No items”
+Aplikacja nie musi mieć błędów w konsoli. Prosim, aby aplikacja była napisana według dobrych praktyk.
+Wygląd aplikacji nie ma znaczenia, główne żeby działała według wymogów.
